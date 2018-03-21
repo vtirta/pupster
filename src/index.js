@@ -11,7 +11,9 @@ import "./index.css";
 import { 
     BrowserRouter as Router, 
    /* Link, */
-    Route } 
+    Route,
+    Switch
+  }
 from "react-router-dom";
 
 ReactDOM.render(
@@ -20,10 +22,12 @@ ReactDOM.render(
       <div>
         <Navbar />
         <Wrapper>
-          <Route exact path="/" component={About} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/discover" component={Discover} />
-          <Route exact path="/Search" component={Search} />
+          <Switch>
+            <Route exact path="/" component={About} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/discover" component={Discover} />
+            <Route exact path="/Search" component={Search} />
+          </Switch>
         </Wrapper>
         <Footer />
       </div>
